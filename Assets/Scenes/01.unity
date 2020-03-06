@@ -391,7 +391,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.5, y: -5.9}
+  m_AnchoredPosition: {x: 2.5, y: -2.1}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &416160912
@@ -427,7 +427,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u4E0A\u8863\n\n"
+  m_Text: "\u4E0A\n\u8863"
 --- !u!222 &416160913
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -593,7 +593,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 594118730}
   toggleTransition: 1
   graphic: {fileID: 453134501}
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 1089260744}
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -672,7 +672,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.5, y: -5.9}
+  m_AnchoredPosition: {x: 2.5, y: -4.8}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &689962681
@@ -708,7 +708,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u773C\u775B\n"
+  m_Text: "\u773C\n\u775B"
 --- !u!222 &689962682
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1021,6 +1021,7 @@ GameObject:
   - component: {fileID: 1089260741}
   - component: {fileID: 1089260743}
   - component: {fileID: 1089260742}
+  - component: {fileID: 1089260744}
   m_Layer: 5
   m_Name: bg
   m_TagString: Untagged
@@ -1044,7 +1045,6 @@ RectTransform:
   - {fileID: 1334227211}
   - {fileID: 1406863051}
   - {fileID: 594118728}
-  - {fileID: 1978306803}
   m_Father: {fileID: 1672868443}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1091,6 +1091,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089260740}
   m_CullTransparentMesh: 0
+--- !u!114 &1089260744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089260740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AllowSwitchOff: 0
 --- !u!1 &1173840425
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,13 +1261,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1193268925}
   toggleTransition: 1
   graphic: {fileID: 1645272397}
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 1089260744}
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 0
+  m_IsOn: 1
 --- !u!114 &1193268925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1374,7 +1387,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1334227213}
   toggleTransition: 1
   graphic: {fileID: 1367095840}
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 1089260744}
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1576,7 +1589,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1406863053}
   toggleTransition: 1
   graphic: {fileID: 708572260}
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 1089260744}
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1655,7 +1668,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 2.2, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1430764913
@@ -1691,7 +1704,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u978B\u5B50\n"
+  m_Text: "\u978B\n\u5B50"
 --- !u!222 &1430764914
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1736,7 +1749,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -123.9, y: 90}
+  m_AnchoredPosition: {x: -123.9, y: 89.999985}
   m_SizeDelta: {x: 30.96, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1481154920
@@ -1781,7 +1794,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1481154921}
   toggleTransition: 1
   graphic: {fileID: 191907928}
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 1089260744}
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1926,7 +1939,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.5, y: -5.9}
+  m_AnchoredPosition: {x: 2.5, y: -4.8}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1639098942
@@ -1962,7 +1975,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u88E4\u5B50\n\n"
+  m_Text: "\u88E4\n\u5B50"
 --- !u!222 &1639098943
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2077,6 +2090,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1089260741}
+  - {fileID: 1978306803}
   m_Father: {fileID: 274997989}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2157,7 +2171,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 3.3, y: -7.6}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1763834437
@@ -2193,7 +2207,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u8138\u578B\n\n"
+  m_Text: "\u6027\n\u522B\n"
 --- !u!222 &1763834438
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2236,7 +2250,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.5, y: -5.9}
+  m_AnchoredPosition: {x: 2.5, y: -3.2}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1901627607
@@ -2272,7 +2286,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5934\u53D1"
+  m_Text: "\u5934\n\u53D1"
 --- !u!222 &1901627608
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2292,9 +2306,8 @@ GameObject:
   - component: {fileID: 1978306803}
   - component: {fileID: 1978306806}
   - component: {fileID: 1978306805}
-  - component: {fileID: 1978306804}
   m_Layer: 5
-  m_Name: face
+  m_Name: sex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2312,63 +2325,14 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1173840426}
-  m_Father: {fileID: 1089260741}
-  m_RootOrder: 5
+  m_Father: {fileID: 1672868443}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -123.89996, y: -149.99997}
+  m_AnchoredPosition: {x: -111.18997, y: -148.71997}
   m_SizeDelta: {x: 30.96, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1978306804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1978306802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1978306805}
-  toggleTransition: 1
-  graphic: {fileID: 1173840427}
-  m_Group: {fileID: 0}
-  onValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_IsOn: 0
 --- !u!114 &1978306805
 MonoBehaviour:
   m_ObjectHideFlags: 0
