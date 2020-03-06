@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AvatarSystem : MonoBehaviour {
+    public GameObject girlPlane;
+    public GameObject boyPlane;
+
+    public static AvatarSystem instance;
     //girl
     private GameObject girlTarget;//骨骼物体
     //girl所有的资源信息
@@ -20,18 +24,30 @@ public class AvatarSystem : MonoBehaviour {
     private Transform boyTrans;
     Dictionary<string, SkinnedMeshRenderer> boySMR = new Dictionary<string, SkinnedMeshRenderer>();//换装骨骼上的MeshReneder信息
     string[,] boyStr = new string[,] { { "eyes", "1" }, { "hair", "1" }, { "top", "1" }, { "pants", "1" }, { "shoes", "1" }, { "face", "1" } };
-    void Start() {
-        InstantiateGirlAvatar();
-        DataSave(girlTrans, girlTarget,girlData,girlSMR);
-        InitAvatar(girlData ,girlHips,girlSMR,girlStr);
+    public int sex = 0;//0 girl,1 boy
 
-        InstantiateBoyAvatar();
-        DataSave(boyTrans, boyTarget, boyData, boySMR);
-        InitAvatar(boyData, boyHips, boySMR, boyStr);
+    void Awake() {
+        instance = this;
+    }
+    void Start() {
+        Girl();
+        Boy();
+        boyTarget.SetActive(false);
     }
 
     void Update() {
+        
+    }
 
+    void Girl() {
+        InstantiateGirlAvatar();
+        DataSave(girlTrans, girlTarget, girlData, girlSMR);
+        InitAvatar(girlData, girlHips, girlSMR, girlStr);
+    }
+    void Boy() {
+        InstantiateBoyAvatar();
+        DataSave(boyTrans, boyTarget, boyData, boySMR);
+        InitAvatar(boyData, boyHips, boySMR, boyStr);
     }
     //初始化Model资源和Target模板
     void InstantiateGirlAvatar() {
@@ -95,6 +111,33 @@ public class AvatarSystem : MonoBehaviour {
         int length = obj.GetLength(0);//获取行数
         for (int i = 0; i < length; i++) {
             MeshReplace(data, hips, smr, obj[i, 0], obj[i, 1]);
+        }
+    }
+
+    //更换衣服
+    public void ClothesReplace(string part,string num) {
+        if (sex==0) {
+            MeshReplace(girlData, girlHips, girlSMR, part, num);
+        }
+        else {
+            MeshReplace(boyData, boyHips, boySMR, part, num);
+        }
+    }
+    //更改模型性别
+    public void SexChange() {
+        if (sex==0) {
+            sex = 1;
+            boyTarget.SetActive(true);
+            girlTarget.SetActive(false);
+            girlPlane.SetActive(false);
+            boyPlane.SetActive(true);
+        }
+        else {
+            sex = 0;
+            boyTarget.SetActive(false);
+            girlTarget.SetActive(true);
+            girlPlane.SetActive(true);
+            boyPlane.SetActive(false);
         }
     }
 }
