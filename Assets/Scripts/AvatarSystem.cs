@@ -35,22 +35,22 @@ public class AvatarSystem : MonoBehaviour {
     }
     //初始化Model资源和Target模板
     void InstantiateGirlAvatar() {
-        GameObject source = Instantiate(Resources.Load<GameObject>("FemaleModel"));
+        GameObject source = Instantiate(Resources.Load<GameObject>("FemaleModel"),transform.position,Quaternion.identity);
         girlTrans = source.transform;
         source.SetActive(false);
-        girlTarget = Instantiate(Resources.Load<GameObject>("FemaleTarget"));
+        girlTarget = Instantiate(Resources.Load<GameObject>("FemaleTarget"), transform.position, Quaternion.identity);
         girlHips = girlTarget.GetComponentsInChildren<Transform>();//存储骨骼信息
     }
     void InstantiateBoyAvatar() {
-        GameObject source = Instantiate(Resources.Load<GameObject>("MaleModel"));
+        GameObject source = Instantiate(Resources.Load<GameObject>("MaleModel"), transform.position, Quaternion.identity);
         boyTrans = source.transform;
         source.SetActive(false);
-        boyTarget = Instantiate(Resources.Load<GameObject>("MaleTarget"));
+        boyTarget = Instantiate(Resources.Load<GameObject>("MaleTarget"), transform.position, Quaternion.identity);
         boyHips = boyTarget.GetComponentsInChildren<Transform>();//存储骨骼信息
     }
 
     //存储人物模型的信息
-    void DataSave(Transform trans, GameObject tar, Dictionary<string, Dictionary<string, SkinnedMeshRenderer>> data, Dictionary<string, SkinnedMeshRenderer> skm) {
+    void DataSave(Transform trans, GameObject tar, Dictionary<string, Dictionary<string, SkinnedMeshRenderer>> data, Dictionary<string, SkinnedMeshRenderer> smr) {
         if (trans == null) {
             return;
         }
@@ -65,7 +65,7 @@ public class AvatarSystem : MonoBehaviour {
                 };
                 partGo.transform.parent = tar.transform;
                 //把骨骼target身上的SkinnedMeshReneder信息存储
-                skm.Add(names[0], partGo.AddComponent<SkinnedMeshRenderer>());
+                smr.Add(names[0], partGo.AddComponent<SkinnedMeshRenderer>());
 
                 data.Add(names[0], new Dictionary<string, SkinnedMeshRenderer>());
             }
@@ -74,10 +74,10 @@ public class AvatarSystem : MonoBehaviour {
     }
 
     void MeshReplace(Dictionary<string, Dictionary<string, SkinnedMeshRenderer>> data, Transform[] hips, Dictionary<string, SkinnedMeshRenderer> smr, string part, string num) {
-        SkinnedMeshRenderer skm = data[part][num];//部位资源
+        SkinnedMeshRenderer smrTemp = data[part][num];//部位资源
         //获取骨骼
         List<Transform> bones = new List<Transform>();
-        foreach (Transform skmBone in skm.bones) {
+        foreach (Transform skmBone in smrTemp.bones) {
             foreach (Transform bone in hips) {
                 if (bone.name == skmBone.name) {
                     bones.Add(bone);
@@ -87,8 +87,8 @@ public class AvatarSystem : MonoBehaviour {
         }
         //更换mesh
         smr[part].bones = bones.ToArray();//绑定骨骼
-        smr[part].materials = skm.materials;
-        smr[part].sharedMesh = skm.sharedMesh;
+        smr[part].materials = smrTemp.materials;
+        smr[part].sharedMesh = smrTemp.sharedMesh;
     }
     //初始化
     void InitAvatar(Dictionary<string, Dictionary<string, SkinnedMeshRenderer>> data, Transform[] hips, Dictionary<string, SkinnedMeshRenderer> smr, string[,] obj) {
