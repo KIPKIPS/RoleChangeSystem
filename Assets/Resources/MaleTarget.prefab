@@ -1476,7 +1476,7 @@ Animation:
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
-  m_CullingType: 1
+  m_CullingType: 0
 --- !u!1 &64503589490878933
 GameObject:
   m_ObjectHideFlags: 0
