@@ -5,20 +5,17 @@ using UnityEngine.UI;
 
 public class AvatarToggle : MonoBehaviour {
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Start() {
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
-
     public void OnValueChanged(bool isOn) {
         if (isOn) {
-            if (name=="boy"||name=="girl") {
+            if (name=="girl"||name=="boy") {
                 AvatarSystem.instance.SexChange();
                 return;
             }
