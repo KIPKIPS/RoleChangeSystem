@@ -16,7 +16,6 @@ public class AvatarSystem : MonoBehaviour {
     void Start() {
         InstantiateSource();
         InstantiateTarget();
-        girlHips = girlTarget.GetComponentsInChildren<Transform>();//存储骨骼信息
         DataSave();
         //foreach (KeyValuePair<string,Dictionary<string,SkinnedMeshRenderer>> gd in girlData) {
         //    foreach (var smr in gd.Value) {
@@ -37,6 +36,7 @@ public class AvatarSystem : MonoBehaviour {
     }
 
     void InstantiateTarget() {
+        girlHips = girlTarget.GetComponentsInChildren<Transform>();//存储骨骼信息
         girlTarget = Instantiate(Resources.Load<GameObject>("FemaleTarget"));
     }
 
