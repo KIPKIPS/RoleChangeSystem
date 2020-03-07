@@ -36,7 +36,7 @@ public class AvatarSystem : MonoBehaviour {
     }
 
     void Update() {
-        
+
     }
 
     void Girl() {
@@ -51,7 +51,7 @@ public class AvatarSystem : MonoBehaviour {
     }
     //初始化Model资源和Target模板
     void InstantiateGirlAvatar() {
-        GameObject source = Instantiate(Resources.Load<GameObject>("FemaleModel"),transform.position,Quaternion.identity);
+        GameObject source = Instantiate(Resources.Load<GameObject>("FemaleModel"), transform.position, Quaternion.identity);
         girlTrans = source.transform;
         source.SetActive(false);
         girlTarget = Instantiate(Resources.Load<GameObject>("FemaleTarget"), transform.position, Quaternion.identity);
@@ -115,8 +115,8 @@ public class AvatarSystem : MonoBehaviour {
     }
 
     //更换衣服
-    public void ClothesReplace(string part,string num) {
-        if (sex==0) {
+    public void ClothesReplace(string part, string num) {
+        if (sex == 0) {
             MeshReplace(girlData, girlHips, girlSMR, part, num);
         }
         else {
@@ -124,20 +124,19 @@ public class AvatarSystem : MonoBehaviour {
         }
     }
     //更改模型性别
-    public void SexChange() {
-        if (sex==0) {
-            sex = 1;
-            boyTarget.SetActive(true);
-            girlTarget.SetActive(false);
-            girlPlane.SetActive(false);
-            boyPlane.SetActive(true);
-        }
-        else {
-            sex = 0;
-            boyTarget.SetActive(false);
-            girlTarget.SetActive(true);
-            girlPlane.SetActive(true);
-            boyPlane.SetActive(false);
-        }
+    public void SetSexToGirl() {
+        sex = 0;
+        boyTarget.SetActive(false);
+        girlTarget.SetActive(true);
+        girlPlane.SetActive(true);
+        boyPlane.SetActive(false);
+    }
+
+    public void SetSexToBoy() {
+        sex = 1;
+        boyTarget.SetActive(true);
+        girlTarget.SetActive(false);
+        girlPlane.SetActive(false);
+        boyPlane.SetActive(true);
     }
 }
