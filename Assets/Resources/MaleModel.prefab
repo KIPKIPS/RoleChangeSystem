@@ -166,6 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3576369349514409710}
   - component: {fileID: 3475399894946685520}
+  - component: {fileID: 1325144216079871941}
   m_Layer: 0
   m_Name: MaleModel
   m_TagString: Untagged
@@ -237,6 +238,20 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
+--- !u!136 &1325144216079871941
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581410063368626906}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.55819684
+  m_Height: 1.7750192
+  m_Direction: 1
+  m_Center: {x: -3.9804604e-11, y: 0.88932157, z: -0.058196843}
 --- !u!1 &3581416361455749850
 GameObject:
   m_ObjectHideFlags: 0
