@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class AvatarToggle : MonoBehaviour {
@@ -10,11 +11,9 @@ public class AvatarToggle : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
-    {
-    }
+    void Update() {
 
-    private string last = "girl";
+    }
     public void OnValueChanged(bool isOn) {
         if (isOn) {
             if (name=="girl"||name=="boy") {

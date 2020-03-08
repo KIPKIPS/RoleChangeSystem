@@ -1436,7 +1436,6 @@ GameObject:
   - component: {fileID: 69608220988541907}
   - component: {fileID: 102885138628910957}
   - component: {fileID: 7237289797711699244}
-  - component: {fileID: -3088724448875773649}
   m_Layer: 0
   m_Name: MaleTarget
   m_TagString: Model
@@ -1494,18 +1493,6 @@ CapsuleCollider:
   m_Height: 1.7750192
   m_Direction: 1
   m_Center: {x: -3.9804604e-11, y: 0.88932157, z: -0.058196843}
---- !u!114 &-3088724448875773649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 64499333340733415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d79cfcb98ec0acb41925f944bd705f72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &64503589490878933
 GameObject:
   m_ObjectHideFlags: 0
