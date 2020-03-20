@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -26,7 +25,6 @@ public class AvatarSystem : MonoBehaviour {
     Dictionary<string, SkinnedMeshRenderer> boySMR = new Dictionary<string, SkinnedMeshRenderer>();//换装骨骼上的MeshReneder信息
     string[,] boyStr = new string[,] { { "eyes", "1" }, { "hair", "1" }, { "top", "1" }, { "pants", "1" }, { "shoes", "1" }, { "face", "1" } };
     public int sex = 0;//0 girl,1 boy
-
     void Awake() {
         instance = this;
         DontDestroyOnLoad(this.gameObject);
@@ -128,7 +126,6 @@ public class AvatarSystem : MonoBehaviour {
             else {
                 MeshReplace(data, hips, smr, obj[i, 0], obj[i, 1], boyStr);
             }
-            
         }
     }
 
