@@ -28,7 +28,7 @@ public class AvatarSystem : MonoBehaviour {
     void Awake() {
         instance = this;
         DontDestroyOnLoad(this.gameObject);
-        
+
     }
     void Start() {
         Girl();
@@ -96,7 +96,7 @@ public class AvatarSystem : MonoBehaviour {
         }
     }
 
-    void MeshReplace(Dictionary<string, Dictionary<string, SkinnedMeshRenderer>> data, Transform[] hips, Dictionary<string, SkinnedMeshRenderer> smr, string part, string num,string[,] str) {
+    void MeshReplace(Dictionary<string, Dictionary<string, SkinnedMeshRenderer>> data, Transform[] hips, Dictionary<string, SkinnedMeshRenderer> smr, string part, string num, string[,] str) {
         //部位资源
         SkinnedMeshRenderer smrTemp = data[part][num];
         //获取骨骼
@@ -114,16 +114,15 @@ public class AvatarSystem : MonoBehaviour {
         smr[part].materials = smrTemp.materials;
         smr[part].sharedMesh = smrTemp.sharedMesh;
         //保存服装数据
-        SaveClothesData(part,num,str);
+        SaveClothesData(part, num, str);
     }
     //初始化
     void InitAvatar(Dictionary<string, Dictionary<string, SkinnedMeshRenderer>> data, Transform[] hips, Dictionary<string, SkinnedMeshRenderer> smr, string[,] obj) {
         int length = obj.GetLength(0);//获取行数
         for (int i = 0; i < length; i++) {
-            if (sex==0) {
-                MeshReplace(data, hips, smr, obj[i, 0], obj[i, 1],girlStr);
-            }
-            else {
+            if (sex == 0) {
+                MeshReplace(data, hips, smr, obj[i, 0], obj[i, 1], girlStr);
+            } else {
                 MeshReplace(data, hips, smr, obj[i, 0], obj[i, 1], boyStr);
             }
         }
@@ -132,10 +131,9 @@ public class AvatarSystem : MonoBehaviour {
     //更换衣服
     public void ClothesReplace(string part, string num) {
         if (sex == 0) {
-            MeshReplace(girlData, girlHips, girlSMR, part, num,girlStr);
-        }
-        else {
-            MeshReplace(boyData, boyHips, boySMR, part, num,boyStr);
+            MeshReplace(girlData, girlHips, girlSMR, part, num, girlStr);
+        } else {
+            MeshReplace(boyData, boyHips, boySMR, part, num, boyStr);
         }
     }
     //更改模型性别
@@ -155,10 +153,10 @@ public class AvatarSystem : MonoBehaviour {
         boyPlane.SetActive(true);
     }
     //存储更改的服装数据
-    void SaveClothesData(string part,string num,string[,] str) {
+    void SaveClothesData(string part, string num, string[,] str) {
         int length = str.GetLength(0);//获取行数
         for (int i = 0; i < length; i++) {
-            if (str[i,0]==part) {
+            if (str[i, 0] == part) {
                 str[i, 1] = num;
             }
         }
